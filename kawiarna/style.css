@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #EEE8DC;
+}
+#container{
+    width: 100%;
+    margin: 0 auto;
+    min-height: 900px;
+    color: gray;
+    display: grid;
+    grid-template-rows: 20% 40% 40%;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: 
+    "header header"
+    "aside main"
+    "pic pic";
+}
+
+nav{
+    position: sticky;
+    top: 0;
+}
+nav li{
+    float: left;
+    list-style-type: none;
+    width: 20%;
+    height:50px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 5px;
+    background-image: url("denim.webp");
+    outline: 1px solid white;
+    color: #EBEAE8;
+}
+
+nav li:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+nav a {
+    color: #EBEAe8;
+    text-decoration: none;
+}
+header {
+    grid-area: header;
+    margin-top: 20px;
+}
+h1, h2 {
+    color: salmon;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h4 {
+    text-align: center;
+    font-size: 90%;
+}
+
+aside {
+    margin-left: 15%;
+    grid-area: aside;
+}
+
+aside sup {
+    font-weight: bold;
+}
+
+aside td {
+    width: 150px;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+main {
+    grid-area: main;
+}
+main th {
+    color: salmon;
+    font-style: italic;
+    font-size: 1.3em;
+}
+main td {
+    width: 160px;
+    font-size: 1.5em;
+}
+input[type=number]{
+    width: 50px;
+}
+input[type=checkbox]{
+    width: 20px;
+    height: 20px;
+}
+input[type=submit]{
+    width: 150px;
+    height: 25px;
+    background-color: salmon;
+    font-style: italic;
+    color: white;
+    font-size: 1.1em;
+    float: right;
+}
+
+#pic {
+    display: flex;
+    justify-content: space-between;
+}
+figcaption {
+    color: salmon;
+    font-size: 1.5em;
+}
+figure:hover figcaption {
+    color: white;
+    background-color: salmon;
+}

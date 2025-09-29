@@ -1,0 +1,87 @@
+#container
+{
+	width: 45%;
+	min-height: 900px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-rows: 15% 5% 75% 5%;
+	grid-template-columns: 30% 70%;
+	grid-template-areas: 
+	"header header"
+	"nav nav"
+	"aside main"
+	"footer footer";
+	background: linear-gradient(90deg, rgba(195, 215, 229, 1) 23%, rgba(174, 201, 219, 1) 63%, rgba(143, 180, 206, 1) 100%);
+	border-radius: 15px;
+}
+header
+{
+	grid-area: header;
+	background: #C3D7E5;	
+	background: linear-gradient(90deg, rgba(195, 215, 229, 1) 23%, rgba(174, 201, 219, 1) 63%, rgba(143, 180, 206, 1) 100%);
+	border-radius: 15px;
+
+}
+header h1
+{
+	font-family: Georgia, serif;
+	font-size: 3em;
+	word-spacing: 1em;
+	text-align: center;
+
+
+}
+nav
+{
+	grid-area: nav;
+	background: linear-gradient(90deg, rgba(195, 215, 229, 1) 23%, rgba(174, 201, 219, 1) 63%, rgba(143, 180, 206, 1) 100%);
+	border-top: 2px solid #222;
+}
+nav ul
+{
+	display: flex;
+	list-style: none;
+	justify-content: space-around;
+}
+nav a, aside a
+{
+	text-decoration: none;
+	color:navy;
+}
+aside
+{
+	grid-area: aside;
+}
+aside li
+{
+	list-style: none;
+	height: 50px;
+	border-top:1px solid #222;
+}
+
+main
+{
+	grid-area: main;
+}
+footer
+{
+	grid-area: footer;
+	text-align: center;
+}
+.listElem
+{
+	display: flex;
+	align-items: center;
+}
+#tresc
+{
+	padding: 20px;
+}
+
+@media only screen and (max-width: 600px)
+{
+	#container {
+		display: block;
+		width: 100%;
+	}
+}
