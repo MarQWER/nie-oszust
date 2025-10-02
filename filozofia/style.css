@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #2F3336;
+}
+#container{
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+#tytul{
+    margin-top: 50px;
+    color: #DBDDDC;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #1C74B3;
+}
+nav li{
+    float: left;
+    list-style-type: none;
+    width: 20%;
+    height:50px;
+    padding-top: 10px;
+    text-align: center;
+}
+nav li:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+h1{
+    color: #38A5F0;
+}
+
+p{
+    color: white
+}
+
+#filozofowie{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+    "watts de-mello nietzsche"
+    "platon kant emerson";
+}
+figure figcaption{
+    color: white;
+}
+#watts{
+    grid-area: watts
+}
+#de-mello{
+    grid-area: de-mello
+}
+#nietzsche{
+    grid-area: nietzsche;
+}
+#platon {
+    grid-area: platon;
+}
+#kant {
+    grid-area: kant;
+}
+#emerson{
+    grid-area: emerson;
+}
+
+#wpisy{
+    background-color: #191C21;
+    padding: 50px
+}
+
+#wpisy h3 {
+    color:#38A5F0;
+}
+
+.filozofwpisy {
+    background-color: #2F3336;
+    display: flex;
+    width: 80%;
+    padding: 20px;
+}
+.filozofwpisy img {
+    width: 150px;
+}
+
+
+
