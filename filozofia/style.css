@@ -20,17 +20,18 @@ body{
 
 nav{
     width: 100%;
-    display: flex;
-    justify-content: space-around;
     background-color: #1C74B3;
 }
+nav ul{
+    display: flex;
+    justify-content: space-around;
+}
 nav li{
-    float: left;
+    display: flex;
     list-style-type: none;
-    width: 20%;
     height:50px;
-    padding-top: 10px;
     text-align: center;
+    align-items: center;
 }
 nav li:hover{
     opacity: 0.5;
@@ -51,6 +52,8 @@ p{
 
 #filozofowie{
     display: grid;
+    width: 50%;
+    margin: 0 auto;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(2,1fr);
     grid-template-areas: 
@@ -90,13 +93,49 @@ figure figcaption{
 
 .filozofwpisy {
     background-color: #2F3336;
-    display: flex;
-    width: 80%;
+    margin: 20px;
+    width: 60%;
     padding: 20px;
 }
 .filozofwpisy img {
     width: 150px;
 }
+
+.filozofwpisy figure {
+    display: flex;
+}
+
+#kontakt{
+    padding: 30px;
+}
+
+input[type=submit]{
+    width: 200px;
+    height: 50px;
+    background-color: #1C74B3;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+#socjale{
+    background-color: #191C21;
+    padding: 30px;
+
+}
+span{
+    color: white;
+    font-size: 6em;
+    padding: 30px;
+}
+
+footer{
+    color: white;
+    padding: 20px;
+}
+
+
 
 
 
