@@ -1,0 +1,123 @@
+* {
+    font-family: Georgia;
+    color: #666;
+    /*background-color: #f9f8f6; */
+}
+
+body {
+    background-image: url(images/dark-wood.jpg);
+}
+
+#container {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f9f8f6;
+    width: 940px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(4);
+    grid-template-areas: 
+    "header header"
+    "nav nav"
+    "main aside"
+    "footer footer";
+}
+
+header {
+    background-color: #ADACA8;
+    grid-area: header;
+}
+
+nav {
+    background-color: #ADACA8;
+    width: 100%;
+    grid-area: nav;
+}
+
+nav ul{
+    display: flex;
+    margin: 0 auto;
+}
+nav li{
+    list-style-type: none;
+    display: flex;
+    height: 30px;
+    padding-right: 15px;
+    color: white;
+}
+
+nav li:hover {
+    color: black;
+}
+
+main {
+    grid-area: main;
+}
+main figure {
+    display: flex;
+    margin: 15px;
+}
+
+.tytul {
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+.przypis {
+    color: #C7717A;
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.zdjecie figure {
+    border: 1px pink solid;
+    display: block;
+    text-align: left;
+    padding: 4px;
+}
+
+.opis{
+    text-align: left;
+}
+
+aside {
+    grid-area: aside;
+    border-left: 1px pink solid;
+}
+
+aside p {
+    border-bottom: 1px pink solid;
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #C7717A;
+}
+
+aside p:hover {
+    color: #985d6a;
+    background-color: #efefef ;
+}
+
+aside #kontakt {
+    text-align: left;
+    padding: 25px;
+}
+
+#kontakt h2 {
+    color: #C7717A;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #666;
+    color: white;
+}
+
+footer p {
+    color: white;
+    text-align: left;
+    margin: 15px;
+}
