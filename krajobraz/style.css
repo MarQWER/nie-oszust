@@ -1,0 +1,80 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    font-size: 1.05em;
+}
+
+#container {
+    background-color: white;
+    width: 100%;
+}
+
+#nav1 {
+    background-color: #FF8500;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    margin: 1px;
+}
+
+#nav1 ul {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    margin: 20px;
+}
+
+#nawigacja1 {
+    flex-basis: 80%;   
+}
+
+#nav2 {
+    background-color: white;
+    color: black;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 60%;
+}
+
+#nav2 ul {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    margin: 20px;
+}
+
+#nav2 div {
+    background-color: #FF8500;
+    border-radius: 50%;
+    font-size: 1.2em;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+main 
+{
+    background-image: url(gora.jpg);
+    width: 99%;
+    height: 750px; 
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+main .kropka {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px #FF8500 solid;
+    margin: 5px;
+}
+
+.kropka:hover {
+    background-color: #FF8500;
+}
+
+
