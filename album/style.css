@@ -21,7 +21,9 @@ header{
 
 figure {
     margin: 75px;
-    padding: 5px;
+    padding: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
     background-color: white;
     -webkit-box-shadow: 9px 8px 12px -5px rgba(66, 68, 90, 1);
     -moz-box-shadow: 9px 8px 12px -5px rgba(66, 68, 90, 1);
