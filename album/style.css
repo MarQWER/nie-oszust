@@ -20,7 +20,7 @@ header{
 }
 
 figure {
-    margin: 75px;
+    margin: 50px;
     padding: 7px;
     padding-left: 12px;
     padding-right: 12px;
@@ -34,7 +34,7 @@ figure {
 
 img {
     width: 100%;
-    filter:grayscale(100%)
+    filter:grayscale(100%);
 }
 
 figure:hover{
@@ -43,6 +43,6 @@ figure:hover{
     transform: scale(110%);
 }
 
-figure img:hover {
+figure:hover img{
     filter:none;
 }
