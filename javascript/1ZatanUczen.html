@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
+  <head>
+    <title></title>
+    <style>
+      p {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="code1">Orzeł krąży na</p>
+    <p id="code2">List zdąża ku</p>
+    <p id="code3">godziną duchów.</p>
+    <p id="code4">Powiedzieli, że będzie padać o</p>
+    <p id="code5">Czy drozd krzyczy o</p>
+    <p id="code6">Gdzie można znaleźć szpiega po</p>
+    <p id="code7">Poiwedziałem, aby przyniesiono mi herbatę po</p>
+    <p id="code8">Gdzie moja forsa? Czekam do</p>
+    <p id="code9">Mój zegarek stanął o</p>
+    <p id="code10">Mój parasol nie lata. Czar przestał dzialać po</p>
+    <p id="code11">Zielony kanarek prazyleci po</p>
+    <p id="code12">Ostrygi otwierają sie po</p>
 
-</head>
-<body>
+    <div id="wypisz">Tu będzie wynik naszych starań</div>
 
+    <script>
+      let tajnyKod = document.querySelector("#code9").innerHTML;
 
-	<p id="code1">Orzeł krąży na</p>
-	<p id="code2">List zdąża ku </p>
-	<p id="code3">godziną duchów.</p>
-	<p id="code4">Powiedzieli, że będzie padać o</p>
-	<p id="code5">Czy drozd krzyczy o </p>
-	<p id="code6">Gdzie można znaleźć szpiega po</p>
-	<p id="code7">Poiwedziałem, aby przyniesiono mi herbatę po</p>
-	<p id="code8">Gdzie moja forsa? Czekam do </p>
-	<p id="code9">Mój zegarek stanął o</p>
-	<p id="code10">Mój parasol nie lata. Czar przestał dzialać po </p>
-	<p id="code11">Zielony kanarek prazyleci po</p>
-	<p id="code12">Ostrygi otwierają sie po</p>
-
-	<div id="wypisz">Tu będzie wynik naszych starań</div>
-
-
-	
-
-</body>
+      document.querySelector("#wypisz").innerHTML = tajnyKod + " północy";
+    </script>
+  </body>
 </html>
