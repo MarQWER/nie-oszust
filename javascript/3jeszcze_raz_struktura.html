@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Filmy</title>
+  </head>
+  <body>
+    <h1 id="hjeden">Godziny seansów</h1>
+    <h2 id="movie1">Plan dziewięć z kosmosu</h2>
+    <p>
+      Seanse rozpoczynają się o 15:00 i 19:00.
+      <span> Specjalny seans rozpocznie się dziś o <em>północy</em>! </span>
+    </p>
+    <h2 id="movie2">Zakazana planeta</h2>
+    <p>Seanse rozpoczynają się o 17:00 i 21:00.</p>
+
+    <script>
+      let hjeden = document.querySelector("#hjeden");
+      let hdwa = document.querySelector("h2");
+      let paragraf = document.querySelector("p");
+      let span = document.querySelector("span");
+
+      hjeden.style.color = "red";
+      hdwa.style.backgroundColor = "brown";
+      hdwa.style.color = "white";
+      paragraf.style.fontSize = "3em";
+      paragraf.style.backgroundColor = "yellow";
+      paragraf.style.color = "purple";
+      span.style.backgroundColor = "green";
+      span.style.color = "red";
+    </script>
+  </body>
+</html>

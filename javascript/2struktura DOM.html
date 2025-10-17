@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mój blog</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="blog.js"></script>
+  </head>
+  <body>
+    <h1 id="hjeden">Mój blog</h1>
+    <div>
+      <h2>Wspaniały dzień spędzony na oglądaniu ptaków</h2>
+      <p id="akapit1">
+        Dziś zobaczyłem trzy kaczki. Nadałem im imiona Kwaczek, Kuper i
+        Dziwaczka
+      </p>
+
+      <p id="akapit2">Zrobiłem im też kilka zdjęć</p>
+    </div>
+
+    <script>
+      let hjeden = document.querySelector("#hjeden");
+      let paragraf1 = document.querySelector("#akapit1");
+      let paragraf2 = document.querySelector("#akapit2");
+      hjeden.style.border = "2px solid red";
+      hjeden.style.fontFamily = "arial";
+      paragraf1.style.color = "white";
+      paragraf1.style.backgroundColor = "purple";
+      paragraf2.style.backgroundColor = "pink";
+    </script>
+  </body>
+</html>
