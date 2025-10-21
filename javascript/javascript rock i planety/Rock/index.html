@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="skala"><img src="rock.png" alt="rockalone2k" id="rock" /></div>
+      <div id="guzik1" class="guzik">Głaskanie</div>
+      <div id="guzik2" class="guzik">Karmienie</div>
+      <div id="guzik3" class="guzik">Zabawa</div>
+    </div>
+
+    <script>
+      let skala = document.querySelector("#rock");
+
+      let guzik1 = document.querySelector("#guzik1");
+      let guzik2 = document.querySelector("#guzik2");
+      let guzik3 = document.querySelector("#guzik3");
+
+      function glaskanie() {
+        skala.setAttribute("src", "rock_happy.png");
+        setTimeout(emocje, 5000);
+      }
+
+      function powrot() {
+        skala.setAttribute("src", "rock.png");
+      }
+
+      function smutek() {
+        skala.setAttribute("src", "rock_depressed.png");
+      }
+
+      function zlosc() {
+        skala.setAttribute("src", "rock_rage.png");
+      }
+
+      function emocje() {
+        setTimeout(powrot, 2000);
+        setTimeout(smutek, 3000);
+        setTimeout(zlosc, 5000);
+      }
+
+      document.querySelector("#guzik1").addEventListener("click", glaskanie);
+      document.querySelector("#guzik2").addEventListener("click", glaskanie);
+      document.querySelector("#guzik3").addEventListener("click", glaskanie);
+
+      setTimeout(emocje, 5000);
+      //setInterval(powrot, 2000);
+      //setInterval(smutek, 3000);
+      //setInterval(zlosc, 5000);
+    </script>
+  </body>
+</html>

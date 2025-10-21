@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Planety</title>
+  </head>
+  <body>
+    <h1>Zielona planeta</h1>
+    <p>Wszystko jest w porządku.</p>
+    <h1 id="nazwa">Czerwona planeta</h1>
+    <p id="czerwona">Nie ma tu nic ciekawego.</p>
+    <h1>Niebieska planeta</h1>
+    <p>Wszystkie systemy sprawne.</p>
+
+    <input type="image" id="guzik" src="pobrane.jpg" />
+
+    <script>
+      function destroy() {
+        document.querySelector("#nazwa").style.color = "red";
+        document.querySelector("#czerwona").innerHTML = "ostrzal rakietowy";
+        document.querySelector("#czerwona").style.color = "red";
+      }
+
+      document.querySelector("#guzik").addEventListener("click", destroy);
+    </script>
+  </body>
+</html>
