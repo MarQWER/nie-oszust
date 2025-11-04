@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 60%;
+        margin: 0 auto;
+        gap: 15px;
+      }
+      img {
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <figure>
+        <img src="zgadula/zeroblur.jpg" alt="zero" id="id1" />
+      </figure>
+      <figure><img src="zgadula/oneblur.jpg" alt="one" id="id2" /></figure>
+      <figure><img src="zgadula/twoblur.jpg" alt="two" id="id3" /></figure>
+      <figure>
+        <img src="zgadula/threeblur.jpg" alt="three" id="id4" />
+      </figure>
+      <figure>
+        <img src="zgadula/fourblur.jpg" alt="four" id="id5" />
+      </figure>
+      <figure>
+        <img src="zgadula/fiveblur.jpg" alt="five" id="id6" />
+      </figure>
+    </div>
+
+    <script>
+      //   let img1 = document.querySelector("#id1");
+      //   let img2 = document.querySelector("#id2");
+      //   let img3 = document.querySelector("#id3");
+      //   let img4 = document.querySelector("#id4");
+      //   let img5 = document.querySelector("#id5");
+      //   let img6 = document.querySelector("#id6");
+
+      //   img1.addEventListener("mouseover", function () {
+      //     img1.src = "zgadula/zero.jpg";
+      //   });
+      //   img2.addEventListener("mouseover", function () {
+      //     img2.src = "zgadula/one.jpg";
+      //   });
+      //   img3.addEventListener("mouseover", function () {
+      //     img3.src = "zgadula/two.jpg";
+      //   });
+      //   img4.addEventListener("mouseover", function () {
+      //     img4.src = "zgadula/three.jpg";
+      //   });
+      //   img5.addEventListener("mouseover", function () {
+      //     img5.src = "zgadula/four.jpg";
+      //   });
+      //   img6.addEventListener("mouseover", function () {
+      //     img6.src = "zgadula/five.jpg";
+      //   });
+
+      let img = document.querySelectorAll("img");
+      img.forEach(function (item) {
+        item.addEventListener("mouseover", function () {
+          let name = this.getAttribute("alt");
+          this.setAttribute("src", "zgadula/" + name + ".jpg");
+        });
+        item.addEventListener("mouseout", function () {
+          let name = this.getAttribute("alt");
+          this.setAttribute("src", "zgadula/" + name + "blur.jpg");
+        });
+      });
+    </script>
+  </body>
+</html>
