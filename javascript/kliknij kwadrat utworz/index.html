@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+      .kwadrat {
+        background: green;
+        width: 200px;
+        height: 200px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" value="DODAJ ELEMENT" id="guzik" />
+    <div id="container"></div>
+
+    <script>
+      let rodzic = document.querySelector("#container");
+      let guzik = document.querySelector("#guzik");
+
+      function dodajKwadrat() {
+        let kw = document.createElement("div");
+        kw.className = "kwadrat";
+        kw.innerHTML = "elo jestem kwadrat";
+        rodzic.appendChild(kw);
+      }
+
+      guzik.addEventListener("click", dodajKwadrat);
+    </script>
+  </body>
+</html>

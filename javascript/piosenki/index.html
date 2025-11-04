@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .piosenka {
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 5px;
+        background-color: lightblue;
+      }
+      .piosenka input {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <input type="search" placeholder="Tytuł piosenki" id="wpisz" />
+      <input type="button" value="Dodaj Piosenkę" id="guzik" />
+
+      <hr />
+
+      <script>
+        let wpisz = document.querySelector("#wpisz");
+        let guzik = document.querySelector("#guzik");
+        function dodajPiosenke() {
+          let piosenka = document.createElement("div");
+          piosenka.className = "piosenka";
+          let rodzic = document.querySelector("#container");
+          piosenka.innerHTML = wpisz.value;
+          rodzic.appendChild(piosenka);
+          let usun = document.createElement("input");
+          usun.type = "button";
+          usun.value = "X";
+          piosenka.appendChild(usun);
+          usun.addEventListener("click", function () {
+            this.parentNode.remove();
+          });
+        }
+
+        guzik.addEventListener("click", dodajPiosenke);
+      </script>
+    </div>
+  </body>
+</html>

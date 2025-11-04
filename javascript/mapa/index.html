@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <figure><img src="map.jpg" alt="mapa" id="mapa" /></figure>
+    <p>Przesun kursorem po mapie, aby uzyskac wspolrzedne</p>
+    <p id="kordy"></p>
+
+    <script>
+      let mapa = document.querySelector("#mapa");
+
+      mapa.addEventListener("mousemove", function (item) {
+        let x = item.clientX;
+        let y = item.clientY;
+
+        document.querySelector("#kordy").innerHTML = x + " ; " + y;
+      });
+    </script>
+  </body>
+</html>
