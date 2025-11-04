@@ -1,144 +1,141 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 15px;
 }
 
 body {
-    background-color: #303030;
+  background-color: #303030;
 }
 
 #container {
-    color: white;
-    width: 75%;
-    height: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    grid-template-rows: repeat(5,1fr);
-    grid-template-areas: 
+  color: white;
+  width: 75%;
+  height: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
     "e1 e1 e1 e2 e2 e2"
     "e3 e4 e5 e5 e5 e5"
     "e6 e7 e5 e5 e5 e5"
     "e8 e8 e9 e10 e11 e12"
     "e13 e13 e13 e13 e13 e13";
-    grid-gap: 15px;
+  grid-gap: 15px;
 }
 
 header {
-    grid-area: e1;
-    font-size: 1.5em;
-    text-align: center;
+  grid-area: e1;
+  font-size: 1.5em;
+  text-align: center;
 }
 #godzina {
-    grid-area: e2;
-    font-size: 1.5em;
-    text-align: center;
+  grid-area: e2;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 #id1 {
-    grid-area: e3;
-    text-align: center;
-    background-color: #2F95D3;
-    font-size: 1.5em;
+  grid-area: e3;
+  text-align: center;
+  background-color: #2f95d3;
+  font-size: 1.5em;
 }
 #id1 span {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 #id2 {
-    grid-area: e4;
-    background-color: #2F95D3;
-    text-align: center;
-    font-size: 1.5em;
+  grid-area: e4;
+  background-color: #2f95d3;
+  text-align: center;
+  font-size: 1.5em;
 }
 #id2 span {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 #id3 {
-    grid-area: e6;
-    background-color: lightslategray;
-    text-align: center;
-    font-size: 1.5em;
+  grid-area: e6;
+  background-color: lightslategray;
+  text-align: center;
+  font-size: 1.5em;
 }
 #id3 span {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 #id4 {
-    grid-area: e7;
-    background-color: limegreen;
-    text-align: center;
-    font-size: 1.5em;
+  grid-area: e7;
+  background-color: limegreen;
+  text-align: center;
+  font-size: 1.5em;
 }
 #id4 span {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 #id5 {
-    grid-area: e5;
-    background-color: lightslategray;
-    font-size: 1.5em;
-    
-
+  grid-area: e5;
+  background-color: lightslategray;
+  font-size: 1.5em;
 }
 #id5 span {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 #id6 {
-    grid-area: e8;
-    background-color: orange;
-    text-align: center;
-    font-size: 1.5em;
+  grid-area: e8;
+  background-color: orange;
+  text-align: center;
+  font-size: 1.5em;
 }
 #id6 span {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 #id7 {
-    grid-area: e9;
-    background-color: red;
-    text-align: center;
-    font-size: 1.5em;
+  grid-area: e9;
+  background-color: red;
+  text-align: center;
+  font-size: 1.5em;
 }
 #id7 span {
-    font-size: 4em;
+  font-size: 4em;
 }
 
 #id8 {
-    grid-area: e10;
-    background-color: blue;
-    text-align: center;
-    font-size: 1.5em;
+  grid-area: e10;
+  background-color: blue;
+  text-align: center;
+  font-size: 1.5em;
 }
 #id8 span {
-    font-size: 4em;
+  font-size: 4em;
 }
 
 #id9 {
-    grid-area: e11;
-    background-color: darkorange;
-    text-align: center;
-    font-size: 1.5em;
+  grid-area: e11;
+  background-color: darkorange;
+  text-align: center;
+  font-size: 1.5em;
 }
 #id9 span {
-    font-size: 4em;
+  font-size: 4em;
 }
 
 #id10 {
-    grid-area: e12;
-    background-color: #2F95D3;
-    text-align: center;
-    font-size: 1.5em;
+  grid-area: e12;
+  background-color: #2f95d3;
+  text-align: center;
+  font-size: 1.5em;
 }
 #id10 span {
-    font-size: 4em;
+  font-size: 4em;
 }
 
 footer {
-    grid-area: e13;
-    font-size: 1.5em;
-    text-align: center;
-
+  grid-area: e13;
+  font-size: 1.5em;
+  text-align: center;
 }
