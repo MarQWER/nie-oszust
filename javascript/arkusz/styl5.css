@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+}
+
+img {
+  height: 70px;
+}
+#baner {
+  background-color: #1c59a7;
+  color: white;
+  text-align: center;
+  height: 80px;
+}
+
+nav {
+  display: flex;
+}
+
+#lewy {
+  background-color: #3a70b5;
+  width: 33%;
+  height: 200px;
+}
+#srodkowy {
+  background-color: #5a8ac8;
+  width: 33%;
+  height: 200px;
+}
+#prawy {
+  background-color: #86acdd;
+  width: 34%;
+  height: 200px;
+  text-align: center;
+}
+
+#dolnypanel {
+  background-color: #86acdd;
+  text-align: center;
+  height: 300px;
+}
+
+#stopka {
+  background-color: #1c59a7;
+  color: white;
+}
+
+#prawy a {
+  background-color: yellow;
+  padding: 10px;
+}
