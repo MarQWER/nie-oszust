@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styl4.css" />
+    <title>Nasza stacja paliw</title>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h2>Witamy na stacji paliw!</h2>
+      </header>
+      <nav>
+        <div id="lewy1">
+          <a href="index.html"><img src="pliki2/home.png" alt="home" /></a>
+          <a href="kalkulacja.html"><img src="pliki2/znak.png" alt="znak" /></a>
+        </div>
+        <div id="prawy1">
+          <img
+            src="pliki2/samochod.png"
+            alt="grafika: samochód"
+            #id="samochod"
+          />
+        </div>
+      </nav>
+      <main>
+        <h2>Oblicz, ile litrów musisz zatankować</h2>
+        <p>dystans do przejechania w km:</p>
+        <input type="number" id="dystans" />
+        <p>spalanie samochodu w l/100km</p>
+        <input type="number" id="spalanie" /> <br />
+        <input type="button" value="OBLICZ" id="oblicz" />
+
+        <p id="potrzebujesz"></p>
+      </main>
+      <footer>
+        <div id="lewy2">
+          <p>Stronę opracował: 1111111111</p>
+        </div>
+        <div id="prawy2">
+          <a href="kwerendy.txt">Tu pobierasz zapytania</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      let guzik = document.querySelector("#oblicz");
+
+      function Oblicz() {
+        let dystans = document.querySelector("#dystans").value;
+        let spalanie = document.querySelector("#spalanie").value;
+        let ilosc = (dystans * spalanie) / 100;
+
+        let wynik = document.querySelector("#potrzebujesz");
+        wynik.innerHTML = "Potrzebujesz: " + ilosc + " litrów paliwa";
+      }
+
+      guzik.addEventListener("click", Oblicz);
+    </script>
+  </body>
+</html>
