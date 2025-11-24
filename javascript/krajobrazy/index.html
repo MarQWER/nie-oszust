@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <figure><img src="images/p1.jpg" alt="" id="mainPic" /></figure>
+      <h2>Przeglądaj zdjęcia</h2>
+      <div id="miniatury">
+        <img src="images/p1.jpg" alt="" id="p1" class="male" />
+        <img src="images/p2.jpg" alt="" id="p2" class="male" />
+        <img src="images/p3.jpg" alt="" id="p3" class="male" />
+        <img src="images/p4.jpg" alt="" id="p4" class="male" />
+        <img src="images/p5.jpg" alt="" id="p5" class="male" />
+      </div>
+    </div>
+
+    <script>
+      let mainPic = document.querySelector("#mainPic");
+      let imagesContainer = document.querySelector("#miniatury"); // Caly kontener ze wszystkimi obrazkami
+
+      function handleClick(event) {
+        // event bo dzieki temu cos sie przekazuje??
+        if (event.target.src !== undefined) {
+          // sprawdza czy nie klikam pomiedzy obrazkami gdzie nic nie ma
+          mainPic.src = event.target.src; // podmienia src zdjecia na src tego co kliknalem
+        }
+      }
+
+      imagesContainer.addEventListener("click", handleClick); // evencik wiadomo
+    </script>
+  </body>
+</html>
