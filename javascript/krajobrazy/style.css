@@ -11,8 +11,7 @@
 #miniatury {
   display: flex;
   justify-content: space-around;
-  gap: 40px;
-  bottom: 0;
+  gap: 20px;
 }
 
 .male {

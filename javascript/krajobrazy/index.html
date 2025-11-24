@@ -21,17 +21,31 @@
 
     <script>
       let mainPic = document.querySelector("#mainPic");
-      let imagesContainer = document.querySelector("#miniatury"); // Caly kontener ze wszystkimi obrazkami
+      let imagesContainer = document.querySelector("#miniatury");
 
       function handleClick(event) {
-        // event bo dzieki temu cos sie przekazuje??
         if (event.target.src !== undefined) {
-          // sprawdza czy nie klikam pomiedzy obrazkami gdzie nic nie ma
-          mainPic.src = event.target.src; // podmienia src zdjecia na src tego co kliknalem
+          mainPic.src = event.target.src;
         }
+        clearInterval(photochange);
+        photochange = setInterval(nextPhoto, 2000);
+        i = Number(event.target.getAttribute("src").substring(8, 9)) + 1;
+        console.log(event.target.getAttribute("src").substring(8, 9));
+        console.log(event.target.getAttribute("src"));
       }
 
-      imagesContainer.addEventListener("click", handleClick); // evencik wiadomo
+      let i = 1;
+
+      function nextPhoto() {
+        if (i < 6) mainPic.src = "images/p" + i + ".jpg";
+        else i = 0;
+
+        i++;
+      }
+
+      imagesContainer.addEventListener("click", handleClick);
+
+      let photochange = setInterval(nextPhoto, 2000);
     </script>
   </body>
 </html>
