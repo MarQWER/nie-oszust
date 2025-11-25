@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Montaż paneli podłogowych</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <header><img src="montaz_paneli.png" alt="firma usługowa" /></header>
+      <nav>
+        <span><a href="index.html">Strona Główna</a></span>
+        <span><a href="oferta.html">Oferta</a></span>
+        <span><a href="koszty.html">Kalkulator Kosztów</a></span>
+      </nav>
+      <main>
+        <h1>Kalkulator kosztów montażu</h1>
+        Szerokość pomieszczenia [m]:
+        <input type="number" name="szerokosc" id="szerokosc" />
+        Wysokość pomieszczenia [m]:
+        <input type="number" name="wysokosc" id="wysokosc" />
+        <p>Typ panelu</p>
+        <div id="radio">
+          <input type="radio" name="radio1" id="radlamin" value="laminowane" />
+          Panele laminowane <br />
+          <input type="radio" name="radio1" id="radwinyl" value="winylowe" />
+          Panele winylowe <br />
+          <input type="radio" name="radio1" id="raddeska" value="deska" />
+          Deska podłogowa
+        </div>
+        <input type="submit" value="Oblicz" id="guzik" />
+        <p id="wynik"></p>
+      </main>
+      <footer><h5>Autor strony: 0000000000</h5></footer>
+    </div>
+
+    <script>
+      function Oblicz() {
+        let szerokosc = Number(document.querySelector("#szerokosc").value);
+        let dlugosc = Number(document.querySelector("#wysokosc").value);
+        let typPanelu = document.querySelector('input[name="radio1"]:checked');
+        let wynik = document.querySelector("#wynik");
+
+        let pole = szerokosc * dlugosc;
+
+        let kosztZaM2 = 0;
+        if (typPanelu.value === "laminowane") kosztZaM2 = 12;
+        else if (typPanelu.value === "winylowe") kosztZaM2 = 14;
+        else if (typPanelu.value === "deska") kosztZaM2 = 18;
+
+        let koszt = pole * kosztZaM2;
+
+        wynik.innerHTML =
+          "Pole powierzchni pomieszczenia: " +
+          pole +
+          " m², koszt montażu " +
+          koszt +
+          " zł";
+      }
+
+      let guzik = document.querySelector("#guzik");
+
+      guzik.addEventListener("click", Oblicz);
+    </script>
+  </body>
+</html>
