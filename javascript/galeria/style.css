@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #8b8b8b;
+}
+
+#container {
+  margin: 0 auto;
+  text-align: center;
+}
+#miniatury {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+#big {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+#big i {
+  font-size: 5em;
+  cursor: pointer;
+}
+
+.male {
+  width: 300px;
+  border: 3px #1f1f1f solid;
+  border-radius: 30px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+#mainPic {
+  width: 1000px;
+  border: 3px #1f1f1f solid;
+  border-radius: 30px;
+  padding: 2px;
+  height: 600px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <div id="big">
+        <i class="fa-solid fa-angle-left" id="left"></i>
+        <figure><img src="images/p1.jpg" alt="1" id="mainPic" /></figure>
+        <i class="fa-solid fa-angle-right" id="right"></i>
+      </div>
+
+      <h2>Przeglądaj zdjęcia</h2>
+      <div id="miniatury">
+        <img src="images/p1.jpg" alt="" id="p1" class="male" />
+        <img src="images/p2.jpg" alt="" id="p2" class="male" />
+        <img src="images/p3.jpg" alt="" id="p3" class="male" />
+        <img src="images/p4.jpg" alt="" id="p4" class="male" />
+        <img src="images/p5.jpg" alt="" id="p5" class="male" />
+      </div>
+
+      <script>
+        let bigPic = document.querySelector("#mainPic");
+        let numer = Number(bigPic.alt);
+        let lewo = document.querySelector("#left");
+        let prawo = document.querySelector("#right");
+        function next() {
+          if (numer == 5) {
+            numer = 1;
+          } else numer++;
+
+          bigPic.src = "images/p" + numer + ".jpg";
+        }
+        function previous() {
+          if (numer == 1) {
+            numer = 5;
+          } else numer--;
+          bigPic.src = "images/p" + numer + ".jpg";
+        }
+
+        prawo.addEventListener("click", next);
+        left.addEventListener("click", previous);
+      </script>
+    </div>
+  </body>
+</html>

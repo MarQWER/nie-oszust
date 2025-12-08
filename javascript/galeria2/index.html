@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-size: 1.1em;
+      }
+      body {
+        background-color: #1f1f1f;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="miniatury">
+        <span id="slajd1.png">[ 1 ]</span>
+        <span id="slajd2.png">[ 2 ]</span>
+        <span id="slajd3.png">[ 3 ]</span>
+        <span id="slajd4.png">[ 4 ]</span>
+        <span id="slajd5.png">[ 5 ]</span>
+      </div>
+      <figure><img src="slajd1.png" alt="" id="mainPic" /></figure>
+    </div>
+
+    <script>
+      let mainPic = document.querySelector("#mainPic");
+      let imagesContainer = document.querySelector("#miniatury");
+
+      function handleClick(event) {
+        if (event.target.id !== undefined) {
+          mainPic.src = event.target.id;
+        }
+        clearInterval(photochange);
+        photochange = setInterval(nextPhoto, 3000);
+        i = Number(event.target.getAttribute("id").substring(5, 6)) + 1;
+        console.log(event.target.getAttribute("id").substring(5, 6));
+        console.log(event.target.getAttribute("id"));
+      }
+
+      let i = 1;
+
+      function nextPhoto() {
+        if (i < 6) mainPic.src = "slajd" + i + ".png";
+        else i = 0;
+
+        i++;
+      }
+
+      imagesContainer.addEventListener("click", handleClick);
+
+      let photochange = setInterval(nextPhoto, 3000);
+    </script>
+  </body>
+</html>

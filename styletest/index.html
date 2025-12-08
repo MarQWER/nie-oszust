@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0 auto;
+      }
+      #main {
+        display: flex;
+        justify-content: center;
+        background-color: lightcoral;
+        padding: 20px;
+        padding-top: 40px;
+      }
+      img {
+        border: 3px solid black;
+        width: 1100px;
+        border-radius: 25px;
+      }
+      article {
+        display: flex;
+        background-color: azure;
+        justify-content: center;
+        text-align: center;
+      }
+      button {
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main">
+      <figure><img src="p1.jpg" alt="obraz" /></figure>
+      <ul>
+        <li>zdjecie 1</li>
+        <li>zdjecie 2</li>
+        <li>zdjecie 3</li>
+      </ul>
+    </main>
+    <article>
+      <div id="tla">
+        <h3>wybierz styl swojej strony</h3>
+        <h2>Kolor tła</h2>
+        <button id="but1" class="butony" value="skyblue">skyblue</button>
+        <button id="but2" class="butony" value="lightcoral">lightcoral</button>
+        <button id="but3" class="butony" value="aquamarine">aquamarine</button>
+      </div>
+
+      <div id="czcionka">
+        <h2>Kolor czcionki</h2>
+        <select name="" id="fontcolor">
+          <option value="white">white</option>
+          <option value="yellow">yellow</option>
+          <option value="red">red</option>
+          <option value="blue">blue</option>
+        </select>
+      </div>
+    </article>
+
+    <script>
+      let but = document.querySelectorAll(".butony");
+      let main = (document.querySelector("#main").style.backgroundColor =
+        but.value);
+      but.forEach(function (item) {
+        item.addEventListener("click", function () {
+          document.querySelector("#main").style.backgroundColor = this.value;
+        });
+      });
+      let kolorczcionki = document.querySelector("#fontcolor").value;
+      console.log(kolorczcionki);
+      document.querySelector("#main").style.color = kolorczcionki;
+    </script>
+  </body>
+</html>
