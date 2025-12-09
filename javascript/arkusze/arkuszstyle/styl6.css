@@ -1,0 +1,59 @@
+* {
+  font-family: Georgia;
+}
+
+#container {
+}
+
+main {
+  display: flex;
+}
+
+#lewy {
+  width: 30%;
+  height: 600px;
+  background-color: maroon;
+  color: white;
+}
+#prawy {
+  width: 70%;
+  height: 600px;
+  background-color: maroon;
+  color: white;
+  font-size: 100%;
+  overflow: auto;
+}
+
+#lista {
+  list-style-type: disc;
+}
+
+footer {
+  background-color: dimgray;
+  color: white;
+}
+
+#obrazlista {
+  display: flex;
+}
+
+p {
+  padding: 10px;
+}
+
+img {
+  padding: 10px;
+  border: 1px solid white;
+}
+
+#indigobutton {
+  background-color: indigo;
+}
+
+#steelbluebutton {
+  background-color: steelblue;
+}
+
+#olivebutton {
+  background-color: olive;
+}

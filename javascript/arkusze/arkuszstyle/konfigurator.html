@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style w JavaScript</title>
+    <link rel="stylesheet" href="styl6.css" />
+  </head>
+  <body>
+    <div id="container">
+      <main>
+        <div id="lewy">
+          <h1>Konfigurator stylu</h1>
+          <p>Podaj kolor tła</p>
+          <button id="indigobutton" class="butony" value="indigo">
+            Indigo
+          </button>
+          <button id="steelbluebutton" class="butony" value="steelblue">
+            SteelBlue
+          </button>
+          <button id="olivebutton" class="butony" value="olive">Olive</button>
+          <p>Podaj Kolor czcionki</p>
+          <select name="" id="fontcolor">
+            <option value="white">White</option>
+            <option value="tan">Tan</option>
+            <option value="bisque">Bisque</option>
+            <option value="plum">Plum</option>
+          </select>
+          <p>Podaj rozmiar czcionki w procentach</p>
+          <input type="text" name="rozmiar" id="rozmiar" value="100%" />
+          <p>Czy rysunek ma mieć ramkę?</p>
+          <input type="checkbox" name="ramka" id="ramka" checked= />
+          <label for="ramka">Rysuj ramkę</label>
+          <p>Jaki jest typ punktora listy?</p>
+          <div id="list">
+            <input type="radio" name="list" id="disc" value="disc" />
+            <label for="disc">Dysk</label> <br />
+            <input type="radio" name="list" id="square" value="square" />
+            <label for="square">Kwadrat</label> <br />
+            <input type="radio" name="list" id="circle" value="circle" />
+            <label for="circle">Okrąg</label> <br />
+          </div>
+        </div>
+        <div id="prawy">
+          <div id="obrazlista">
+            <img src="gibraltar.jpg" alt="Półwysep Gibraltar" id="obrazek" />
+            <ul id="lista">
+              <li>element 1</li>
+              <li>element 2</li>
+              <li>element 3</li>
+            </ul>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </main>
+      <footer>Autor: 0000000000</footer>
+    </div>
+
+    <script>
+      let but = document.querySelectorAll(".butony");
+      but.forEach(function (item) {
+        item.addEventListener("click", function () {
+          document.querySelector("#prawy").style.backgroundColor = this.value;
+        });
+      });
+      let kolorczcionki = document.querySelector("#fontcolor");
+      kolorczcionki.addEventListener("change", function () {
+        document.querySelector("#prawy").style.color = kolorczcionki.value;
+      });
+
+      let rozmiarczcionki = document.querySelector("#rozmiar");
+      rozmiarczcionki.addEventListener("change", function () {
+        document.querySelector("#prawy").style.fontSize = rozmiarczcionki.value;
+        console.log(rozmiarczcionki.value);
+        console.log(this.value);
+      });
+      let ramkabox = document.querySelector("#ramka");
+      ramkabox.addEventListener("click", function () {
+        if (!ramkabox.checked) {
+          document.querySelector("#obrazek").style.border = "none";
+        } else document.querySelector("#obrazek").style.border = "1px white solid";
+      });
+
+      let typlisty = document.querySelectorAll('input[name="list"]');
+      console.log(typlisty);
+      typlisty.forEach(function (item) {
+        item.addEventListener("change", function () {
+          console.log(item.value);
+          document.querySelector("#lista").style.listStyleType = item.value;
+        });
+      });
+    </script>
+  </body>
+</html>
