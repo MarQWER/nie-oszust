@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 30px;
+      }
+      form * {
+        margin-top: 10px;
+      }
+      #dostawa input {
+        width: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Zamów wymarzoną sukienkę z dodatkami</h1>
+    <h2>Dododatki specjalnie dobrane do Twojej kreacji!!!</h2>
+    <h4>Podstawowy koszt sukienki: 1500 zł</h4>
+    <form action="kodzik.php" method="post">
+      <div id="dodatki">
+        <p>Dodatki :</p>
+        <label for="pasek">Pasek</label>
+        <input type="checkbox" id="pasek" name="pasek" />
+        <label for="pasek">150 zł</label> <br />
+        <label for="torebka">Torebka</label>
+        <input type="checkbox" name="torebka" id="torebka" />
+        <label for="torebka">500 zł</label> <br />
+        <label for="buty">Buty</label>
+        <input type="checkbox" name="buty" id="buty" />
+        <label for="buty">300 zł</label> <br />
+        <label for="kapelusz">Kapelusz</label>
+        <input type="checkbox" name="kapelusz" id="kapelusz" />
+        <label for="kapelusz">250 zł</label> <br />
+      </div>
+      <div id="fakturacon">
+        <label for="faktura">Proszę o fakturę do zamówienia: </label>
+        <input type="checkbox" name="faktura" id="faktura" />
+      </div>
+      <div id="dane">
+        <label for="imie">Imię: </label>
+        <input type="text" name="imie" id="imie" /> <br />
+        <label for="nazwisko">Nazwisko: </label>
+        <input type="text" name="nazwisko" id="nazwisko" />
+      </div>
+      <div id="dostawa">
+        <p>Dostawa:</p>
+        Miasto <input type="text" name="miasto" id="miasto" /> ulica
+        <input type="text" name="ulica" id="ulica" /> nr domu
+        <input type="text" name="nrdomu" id="nrdomu" /> nr lokalu
+        <input type="text" name="nrlokalu" id="nrlokalu" />
+      </div>
+      <input type="submit" value="Złóż zamówienie" />
+    </form>
+  </body>
+</html>
