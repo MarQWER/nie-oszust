@@ -33,7 +33,18 @@
 
     <script>
       let searchBar = document.querySelector("#search");
-      let produkty = document.querySelectorAll("li");
+      let produkty = document.querySelectorAll("#product-list li");
+
+      searchBar.addEventListener("input", function () {
+        let tekst = this.value.toLowerCase();
+        produkty.forEach(function (produkt) {
+          if (produkt.textContent.toLowerCase().includes(tekst)) {
+            produkt.classList.remove("hidden");
+          } else {
+            produkt.classList.add("hidden");
+          }
+        });
+      });
     </script>
   </body>
 </html>

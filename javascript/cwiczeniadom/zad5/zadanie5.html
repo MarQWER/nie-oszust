@@ -135,6 +135,9 @@
           let produkt = event.target.getAttribute("data-name");
           liczba++;
           licznik.innerHTML = "Łączna liczba produktów: " + liczba;
+          let nowy = document.createElement("li");
+          nowy.innerHTML = produkt;
+          lista.appendChild(nowy);
         }
       }
       produkty.addEventListener("click", dodajProdukt);
