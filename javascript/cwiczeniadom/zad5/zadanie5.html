@@ -1,134 +1,143 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Interaktywny koszyk</title>
-   <style>
-       
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #f3f5fa;
-    margin: 0;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-}
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f3f5fa;
+        margin: 0;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+      }
 
-.container {
-    max-width: 700px;
-    width: 100%;
-}
+      .container {
+        max-width: 700px;
+        width: 100%;
+      }
 
-h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #2c3e50;
-}
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #2c3e50;
+      }
 
-h2 {
-    margin-top: 0;
-    color: #34495e;
-}
+      h2 {
+        margin-top: 0;
+        color: #34495e;
+      }
 
-.card {
-    background: white;
-    padding: 25px;
-    margin-bottom: 30px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
+      .card {
+        background: white;
+        padding: 25px;
+        margin-bottom: 30px;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      }
 
-.productList,
-.cartList {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+      .productList,
+      .cartList {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
-.productItem,
-.cartList li {
-    background: #f9fbff;
-    padding: 12px 15px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    border: 1px solid #e3e7ef;
-}
+      .productItem,
+      .cartList li {
+        background: #f9fbff;
+        padding: 12px 15px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        border: 1px solid #e3e7ef;
+      }
 
+      button {
+        border: none;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
 
-button {
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
+      /* Dodawanie */
+      .add-btn {
+        background-color: #3498db;
+        color: white;
+      }
 
-/* Dodawanie */
-.add-btn {
-    background-color: #3498db;
-    color: white;
-}
+      .add-btn:hover {
+        background-color: #217dbb;
+      }
 
-.add-btn:hover {
-    background-color: #217dbb;
-}
+      /* Usuwanie */
+      .delete-btn {
+        background-color: #e74c3c;
+        color: white;
+      }
 
-/* Usuwanie */
-.delete-btn {
-    background-color: #e74c3c;
-    color: white;
-}
+      .delete-btn:hover {
+        background-color: #c0392b;
+      }
 
-.delete-btn:hover {
-    background-color: #c0392b;
-}
-
-/* LICZNIK */
-.counter {
-    background: #eef4ff;
-    padding: 10px 15px;
-    border-radius: 8px;
-    display: inline-block;
-    margin-bottom: 15px;
-    border: 1px solid #dce6ff;
-}
-
-   </style>
-</head>
-<body>
-
+      /* LICZNIK */
+      .counter {
+        background: #eef4ff;
+        padding: 10px 15px;
+        border-radius: 8px;
+        display: inline-block;
+        margin-bottom: 15px;
+        border: 1px solid #dce6ff;
+      }
+    </style>
+  </head>
+  <body>
     <div class="container">
-        <h1>🛒 Sklep – dodawanie produktów do koszyka</h1>
+      <h1>🛒 Sklep – dodawanie produktów do koszyka</h1>
 
-        <section class="products card">
-            <h2>Lista produktów</h2>
-            <ul class="productList">
-                <li class="productItem">
-                    <span>🍎 Jabłko</span>
-                    <button class="addBtn" data-name="Jabłko">Dodaj</button>
-                </li>
-                <li class="productItem">
-                    <span>🍐 Gruszka</span>
-                    <button class="addBbtn" data-name="Gruszka">Dodaj</button>
-                </li>
-                <li class="productItem">
-                    <span>🍌 Banan</span>
-                    <button class="addBbtn" data-name="Banan">Dodaj</button>
-                </li>
-            </ul>
-        </section>
+      <section class="products card">
+        <h2>Lista produktów</h2>
+        <ul class="productList">
+          <li class="productItem">
+            <span>🍎 Jabłko</span>
+            <button class="addBtn" data-name="Jabłko">Dodaj</button>
+          </li>
+          <li class="productItem">
+            <span>🍐 Gruszka</span>
+            <button class="addBtn" data-name="Gruszka">Dodaj</button>
+          </li>
+          <li class="productItem">
+            <span>🍌 Banan</span>
+            <button class="addBtn" data-name="Banan">Dodaj</button>
+          </li>
+        </ul>
+      </section>
 
-        <section class="cart card">
-            <h2>Koszyk</h2>
-            <p id="counter" class="counter">Łączna liczba produktów: 0</p>
-            <ul id="cartList" class="cartList"></ul>
-        </section>
+      <section class="cart card">
+        <h2>Koszyk</h2>
+        <p id="counter" class="counter">Łączna liczba produktów: 0</p>
+        <ul id="cartList" class="cartList"></ul>
+      </section>
     </div>
 
-        
-</body>
+    <script>
+      let produkty = document.querySelector(".productList");
+      let lista = document.querySelector("#cartList");
+      let liczba = 0;
+      let licznik = document.querySelector("#counter");
+      function dodajProdukt(event) {
+        if (event.target.classList.contains("addBtn")) {
+          let produkt = event.target.getAttribute("data-name");
+          liczba++;
+          licznik.innerHTML = "Łączna liczba produktów: " + liczba;
+        }
+      }
+      produkty.addEventListener("click", dodajProdukt);
+    </script>
+  </body>
 </html>
