@@ -58,21 +58,29 @@
     <div id="kropki"></div>
 
     <script>
-      let ilezdjec = 3;
-      let zdjecie1 = "https://picsum.photos/id/1015/600/400";
-      let zdjecie2 = "https://picsum.photos/id/1014/600/400";
-      let zdjecie3 = "https://picsum.photos/id/1013/600/400";
+      let glowne = document.querySelector(".main");
+      let zdjecia = [
+        "https://picsum.photos/id/1015/600/400",
+        "https://picsum.photos/id/1014/600/400",
+        "https://picsum.photos/id/1013/600/400",
+        "https://picsum.photos/id/1012/600/400",
+        "https://picsum.photos/id/1011/600/400",
+        "https://picsum.photos/id/1010/600/400",
+        "https://picsum.photos/id/1008/600/400",
+      ];
+      let ilezdjec = zdjecia.length;
       for (let i = 0; i < ilezdjec; i++) {
         let kropkiContainer = document.querySelector("#kropki");
         let kropka = document.createElement("div");
         kropka.classList.add("kropka");
-        kropka.id = i + 1;
+        kropka.id = i;
         kropkiContainer.appendChild(kropka);
       }
-
       let kropeczka = document.querySelectorAll(".kropka");
-      kropeczka.forEach(() => {
-        kropeczka.addEventListener("click", function () {});
+      kropeczka.forEach((i) => {
+        i.addEventListener("click", function () {
+          glowne.src = zdjecia[i.id];
+        });
       });
     </script>
   </body>
