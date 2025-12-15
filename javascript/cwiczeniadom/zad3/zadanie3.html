@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria zdjęć</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px;
+      }
+
+      .gallery {
+        width: 600px;
+        height: 400px;
+        overflow: hidden;
+        border: 2px solid #333;
+        border-radius: 10px;
+      }
+
+      .gallery img.main {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #kropki {
+        display: flex;
+        margin-top: 10px;
+        gap: 10px;
+      }
+
+      .kropka {
+        background-color: #888;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .kropka:hover {
+        opacity: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Galeria zdjęć</h1>
+
+    <div class="gallery">
+      <img
+        class="main"
+        src="https://picsum.photos/id/1015/600/400"
+        alt="Galeria"
+      />
+    </div>
+    <div id="kropki"></div>
+
+    <script>
+      let ilezdjec = 3;
+      let zdjecie1 = "https://picsum.photos/id/1015/600/400";
+      let zdjecie2 = "https://picsum.photos/id/1014/600/400";
+      let zdjecie3 = "https://picsum.photos/id/1013/600/400";
+      for (let i = 0; i < ilezdjec; i++) {
+        let kropkiContainer = document.querySelector("#kropki");
+        let kropka = document.createElement("div");
+        kropka.classList.add("kropka");
+        kropka.id = i + 1;
+        kropkiContainer.appendChild(kropka);
+      }
+
+      let kropeczka = document.querySelectorAll(".kropka");
+      kropeczka.forEach(() => {
+        kropeczka.addEventListener("click", function () {});
+      });
+    </script>
+  </body>
+</html>

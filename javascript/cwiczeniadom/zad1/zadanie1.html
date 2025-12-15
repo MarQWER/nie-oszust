@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #eee;
+        color: #000000;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      .dark {
+        background-color: #3f3f3f;
+        color: #eee;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        background: #008cba;
+        color: white;
+        border-radius: 5px;
+        transition: background 0.2s;
+      }
+
+      button:hover {
+        background: #00719a;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .box {
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        width: calc(50% - 20px);
+        box-sizing: border-box;
+        transition: background 0.3s, border-color 0.3s;
+      }
+
+      .box img {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 14px;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Przełącznik trybu jasny/ciemny</h1>
+      <button id="modeChange">Dark Mode</button>
+      <p>Obecny tryb: <span id="current">Jasny</span></p>
+    </header>
+
+    <section class="container">
+      <div class="box">
+        <img
+          src="https://picsum.photos/600/300?random=1"
+          alt="Losowe zdjęcie 1"
+        />
+        <h2>Lorem Ipsum 1</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          dignissim justo nec massa fermentum, eget hendrerit nisl venenatis.
+          Fusce id fringilla risus. Vivamus eget urna vel lectus suscipit
+          elementum.
+        </p>
+      </div>
+
+      <div class="box">
+        <img
+          src="https://picsum.photos/600/300?random=2"
+          alt="Losowe zdjęcie 2"
+        />
+        <h2>Lorem Ipsum 2</h2>
+        <p>
+          Morbi ultricies eros at velit porta, sit amet facilisis lectus
+          faucibus. Integer accumsan pretium massa, eu imperdiet metus bibendum
+          in. Sed posuere orci nec lorem commodo egestas.
+        </p>
+      </div>
+
+      <div class="box">
+        <img
+          src="https://picsum.photos/600/300?random=3"
+          alt="Losowe zdjęcie 3"
+        />
+        <h2>Lorem Ipsum 3</h2>
+        <p>
+          Donec vitae justo vel orci iaculis malesuada. Sed sed tortor vel
+          turpis pharetra convallis. Cras convallis justo at orci pulvinar,
+          commodo mattis lorem tristique.
+        </p>
+      </div>
+
+      <div class="box">
+        <img
+          src="https://picsum.photos/600/300?random=4"
+          alt="Losowe zdjęcie 4"
+        />
+        <h2>Lorem Ipsum 4</h2>
+        <p>
+          Phasellus lobortis, nibh non gravida posuere, tortor metus vehicula
+          felis, vitae consequat ligula purus id arcu. Etiam pretium, sem eget
+          ullamcorper suscipit.
+        </p>
+      </div>
+    </section>
+
+    <footer>2025 Strona testowa — Dark Mode Example</footer>
+
+    <script>
+      let guzik = document.querySelector("#modeChange");
+      let aktualny = document.querySelector("#current");
+
+      guzik.addEventListener("click", function () {
+        document.body.classList.toggle("dark");
+
+        let isDark = document.body.classList.contains("dark");
+
+        if (isDark) {
+          guzik.textContent = "Light Mode";
+          aktualny.textContent = "Ciemny";
+        } else {
+          guzik.textContent = "Dark Mode";
+          aktualny.textContent = "Jasny";
+        }
+      });
+    </script>
+  </body>
+</html>
