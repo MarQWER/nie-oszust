@@ -136,8 +136,20 @@
           liczba++;
           licznik.innerHTML = "Łączna liczba produktów: " + liczba;
           let nowy = document.createElement("li");
-          nowy.innerHTML = produkt;
+          nowy.classList.add("productItem");
+          let nazwaspan = document.createElement("span");
+          nazwaspan.innerHTML = produkt;
+          let deletebtn = document.createElement("button");
+          deletebtn.innerHTML = "USUŃ";
+          deletebtn.classList.add("delete-btn");
+          nowy.appendChild(nazwaspan);
+          nowy.appendChild(deletebtn);
           lista.appendChild(nowy);
+          deletebtn.addEventListener("click", function () {
+            this.parentNode.remove();
+            liczba--;
+            licznik.innerHTML = "Łączna liczba produktów: " + liczba;
+          });
         }
       }
       produkty.addEventListener("click", dodajProdukt);
