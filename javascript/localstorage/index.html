@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p><input type="text" id="userName" /></p>
+    <p><input type="submit" id="klik" value="Wyślij" /></p>
+    <div id="wypisz"></div>
+    <h1>Lista zakupów</h1>
+    <p><input type="text" name="produkt" id="produkt" /></p>
+    <p><input type="submit" value="Dodaj" id="dodaj" /></p>
+    <ul id="zakupy"></ul>
+    <h4>Jest to twoja <span id="visitsamount"></span> wizyta</h4>
+
+    <h2>Ustawienia strony</h2>
+    <p>Rozmiar trzciąki:</p>
+    <div>
+      <input type="radio" name="fontSize" id="S" /> <label for="S">S</label>
+    </div>
+    <div>
+      <input type="radio" name="fontSize" id="M" /> <label for="M">M</label>
+    </div>
+    <div>
+      <input type="radio" name="fontSize" id="L" /> <label for="L">L</label>
+    </div>
+
+    <p id="fontchanger">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores facere
+      reiciendis cupiditate quod quis enim! Aperiam, inventore dolorum pariatur
+      at voluptatem tenetur exercitationem iure aliquam maiores qui est,
+      blanditiis nesciunt?
+    </p>
+
+    <script>
+      document.querySelector("#klik").addEventListener("click", function () {
+        let nazwa = document.querySelector("#userName").value;
+        localStorage.setItem("user", nazwa);
+      });
+
+      function wyswietl() {
+        let nazwaUzyt = localStorage.getItem("user");
+        wypisz.textContent = `Witaj ponownie ${nazwaUzyt}`;
+      }
+      let car = ["czerwony", 1996, "mazda"];
+
+      localStorage.setItem("auto", JSON.stringify(car));
+
+      let savedCar = JSON.parse(localStorage.getItem("auto"));
+
+      console.log(savedCar);
+
+      // ĆW 2
+
+      document.querySelector("#dodaj").addEventListener("click", function () {
+        let produkt = document.createElement("li");
+        produkt.innerHTML = document.querySelector("#produkt").value;
+        produkt.className = "produktlist";
+        document.querySelector("#zakupy").appendChild(produkt);
+        let jsonproduct = [];
+        document.querySelectorAll(".produktlist").forEach((element) => {
+          jsonproduct.push(element.innerHTML);
+          console.log(element.innerHTML);
+        });
+        localStorage.setItem("produkt", JSON.stringify(jsonproduct));
+        console.log(JSON.parse(localStorage.getItem("produkt")));
+      });
+
+      function wczytajprodukty() {
+        let produkty = JSON.parse(localStorage.getItem("produkt"));
+        produkty.forEach((element) => {
+          let produkt = document.createElement("li");
+          produkt.innerHTML = element;
+          produkt.classList = "produktlist";
+          document.querySelector("#zakupy").appendChild(produkt);
+        });
+      }
+
+      // ĆW 3
+
+      let visits = localStorage.getItem("visits");
+      function liczwizyte() {
+        if (localStorage.getItem("visits") == null) {
+          visits = 1;
+        } else {
+          visits = localStorage.getItem("visits");
+          visits++;
+        }
+        localStorage.setItem("visits", visits);
+        document.querySelector("#visitsamount").innerHTML =
+          localStorage.getItem("visits");
+      }
+
+      function ustawfonta() {}
+
+      /*
+
+
+
+          Ćwiczenie 2 — lista zakupów w localStorage
+          Zrób pole input + przycisk "Dodaj".
+          Każdy produkt dodajesz do tablicy w localStorage.
+
+          Wymagania:
+
+          Tablica zapisuje się po każdym dodaniu elementu
+
+          Po odświeżeniu lista nadal jest widoczna
+
+          Ćwiczenie 3 — licznik wizyt
+
+          Zwiększaj wartość visits przy każdym wejściu na stronę.
+
+          Ćwiczenie 4 — zapisywanie ustawień (np. rozmiar fontu)
+
+          Użytkownik wybiera S, M, L → zapisujesz wybór i przy starcie ustawiasz font.
+          Ćwiczenie 5 — "Ulubione cytaty"
+
+          Możesz dodać i usuwać cytaty z localStorage.
+
+
+          	*/
+    </script>
+  </body>
+</html>

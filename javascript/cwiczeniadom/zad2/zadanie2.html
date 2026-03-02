@@ -1,34 +1,87 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Lista zadań – delegacja zdarzeń</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-        #todo-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 6px 10px;
-            border: 1px solid #ccc;
-            margin-bottom: 6px;
-            border-radius: 4px;
-        }
-        
-    </style>
-</head>
-<body>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+      #todo-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 6px;
+        border-radius: 4px;
+      }
 
+      .checked {
+        text-decoration: line-through;
+        color: gray;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
     <h2>Dynamiczna Lista Zadań (To-Do)</h2>
 
-    <input type="text" id="task-input" placeholder="Wpisz zadanie...">
+    <input type="text" id="task-input" placeholder="Wpisz zadanie..." />
     <button id="add-btn">Dodaj</button>
 
     <ul id="todo-list"></ul>
 
-    
-</body>
+    <script>
+      let addButton = document.querySelector("#add-btn");
+      let lista = document.querySelector("#todo-list");
+
+      addButton.addEventListener("click", function () {
+        let taskInput = document.querySelector("#task-input").value;
+        let zadanie = document.createElement("li");
+        let zawartosc = document.createElement("span");
+        zawartosc.innerHTML = taskInput;
+        zawartosc.contentEditable = "false";
+        let guziki = document.createElement("div");
+        guziki.style.display = "flex";
+        guziki.style.gap = "10px";
+        guziki.style.cursor = "pointer";
+        let ptaszek = document.createElement("span");
+        ptaszek.classList.add("fa-solid");
+        ptaszek.classList.add("fa-check");
+        ptaszek.style.color = "lime";
+        let edycja = document.createElement("span");
+        edycja.classList.add("fa-solid");
+        edycja.classList.add("fa-pencil");
+        edycja.style.color = "blue";
+        let usun = document.createElement("span");
+        usun.classList.add("fa-solid");
+        usun.classList.add("fa-x");
+        usun.style.color = "red";
+        guziki.appendChild(ptaszek);
+        guziki.appendChild(edycja);
+        guziki.appendChild(usun);
+        zadanie.appendChild(zawartosc);
+        zadanie.appendChild(guziki);
+        lista.appendChild(zadanie);
+        ptaszek.addEventListener("click", function () {
+          zawartosc.classList.toggle("checked");
+        });
+        edycja.addEventListener("click", function () {
+          if (zawartosc.contentEditable == "true") {
+            zawartosc.contentEditable = "false";
+          } else if (zawartosc.contentEditable == "false") {
+            zawartosc.contentEditable = "true";
+          }
+        });
+        usun.addEventListener("click", function () {
+          zadanie.remove();
+        });
+      });
+    </script>
+  </body>
 </html>
