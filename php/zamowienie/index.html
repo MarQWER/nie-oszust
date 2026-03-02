@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zamów Kebab</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #8b0000, #1a1a1a);
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        background: white;
+        width: 420px;
+        margin: 43px auto;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      }
+
+      h1 {
+        text-align: center;
+        color: #8b0000;
+        margin-bottom: 25px;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      select,
+      input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      .radio-group,
+      .checkbox-group {
+        margin-top: 8px;
+      }
+
+      .radio-group label,
+      .checkbox-group label {
+        font-weight: normal;
+        display: block;
+        margin: 3px 0;
+      }
+
+      button {
+        margin-top: 25px;
+        padding: 12px;
+        width: 100%;
+        background: linear-gradient(45deg, #8b0000, #ff0000);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      footer {
+        text-align: center;
+        color: white;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Jeffrey Kebstein 🌯</h1>
+
+      <form method="POST" action="zamowienie.php">
+        <label>Wybierz rodzaj kebaba:</label>
+        <select name="rodzaj">
+          <option value="kurczak">Kurczak</option>
+          <option value="wolowina">Wołowina (+1zł)</option>
+          <option value="mieszany">Mieszany (+1zł)</option>
+        </select>
+
+        <label>Rozmiar:</label>
+        <select name="rozmiar">
+          <option value="maly">Mały (20zł)</option>
+          <option value="sredni">Średni (25zł)</option>
+          <option value="duzy">Duży (30zł)</option>
+          <option value="gigant">Tajemnicza Wyspa (40zł)</option>
+        </select>
+
+        <label>Sos:</label>
+        <div class="radio-group">
+          <label
+            ><input
+              type="radio"
+              name="sos"
+              value="czosnkowy"
+              required
+            />Czosnkowy</label
+          >
+          <label><input type="radio" name="sos" value="ostry" /> Ostry</label>
+          <label
+            ><input type="radio" name="sos" value="lagodny" /> Łagodny</label
+          >
+          <label
+            ><input type="radio" name="sos" value="mieszany" />
+            Mieszany🔥</label
+          >
+        </div>
+
+        <label>Dodatki:</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="ser" value="ser" /> Ser</label>
+          <label
+            ><input type="checkbox" name="frytki" value="frytki" />
+            Frytki</label
+          >
+          <label
+            ><input type="checkbox" name="jalapeno" value="jalapeno" />
+            Jalapeno</label
+          >
+        </div>
+
+        <label>Adres dostawy:</label>
+        <input type="text" name="adres" />
+
+        <button type="submit">Zamów teraz 🚀</button>
+      </form>
+    </div>
+
+    <footer>© 2026 Kebab Express | Najlepszy kebab w mieście</footer>
+  </body>
+</html>
