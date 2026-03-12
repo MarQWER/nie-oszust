@@ -1,0 +1,52 @@
+* {
+  font-family: Helvetica;
+}
+
+header,
+footer {
+  background-color: RGB(70, 130, 180);
+  color: white;
+  height: 30px;
+  text-align: center;
+}
+
+main {
+  background-color: RGB(176, 196, 222);
+  padding: 50px;
+  text-align: center;
+}
+
+#lewy,
+#prawy {
+  background-color: RGB(70, 130, 180);
+  color: white;
+  height: 300px;
+}
+
+#lewy {
+  float: left;
+  width: 80%;
+}
+
+#prawy {
+  float: right;
+  width: 20%;
+}
+
+main img {
+  padding: 3px;
+  border: 1px blue dashed;
+  border-radius: 10px;
+}
+
+#lewy img {
+  height: 40%;
+}
+
+#lewy img:hover {
+  border: 1px white solid;
+}
+
+footer {
+  clear: both;
+}

@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylenowy.css">
+    <link rel="stylesheet" href="stylewspolny.css">
 </head>
 <body>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
     <?php
     $con = mysqli_connect("localhost", "root", "", "baza");
     $zpt = "SELECT * FROM memy";

@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: #0f0f0f;
 }
 #kon {
   width: 100%;
@@ -8,14 +8,13 @@ body {
   text-align: center;
   justify-content: center;
   gap: 50px;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 img {
   border-radius: 30px;
-  box-shadow: 0px 0px 70px 0px white;
 }
 h3 {
-  color: white;
+  color: #fafafa;
 }
 #dislike:hover {
   background-color: rgb(179, 73, 73);
@@ -40,8 +39,8 @@ a {
   width: 140px;
   height: 20px;
   padding: 5px;
-  background-color: white;
-  border: 1px red solid;
+  background-color: #fafafa;
+  border: 1px blue solid;
   border-radius: 5px;
   color: black;
   margin: 0 auto;
