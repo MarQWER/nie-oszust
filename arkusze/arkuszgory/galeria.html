@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria</title>
+    <link rel="stylesheet" href="styl2.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Galeria obrazów</h1>
+    </header>
+
+    <div id="lewy">
+      <img src="zdjecie.jpg" alt="zdjęcie dnia" />
+      <h3>Zdjęcia opublikowali</h3>
+      <table>
+        <tr>
+          <td>Anna Porada</td>
+          <td>10 zdjęć</td>
+        </tr>
+        <tr>
+          <td>Krzysztof Wasilewski</td>
+          <td>12 zdjęć</td>
+        </tr>
+        <tr>
+          <td>Monika Kowalska</td>
+          <td>4 zdjęcia</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="prawy">
+      <input type="button" id="prevguzik" value="prev" />
+      <img id="galleryImage" src="1.jpg" alt="galeria" />
+      <input type="button" id="nextguzik" value="next" />
+      <hr />
+      <img src="1.jpg" id="obraz1" alt="miniatura" class="miniatura" />
+      <img src="2.jpg" id="obraz2" alt="miniatura" class="miniatura" />
+      <img src="3.jpg" id="obraz3" alt="miniatura" class="miniatura" />
+      <img src="4.jpg" id="obraz4" alt="miniatura" class="miniatura" />
+      <img src="5.jpg" id="obraz5" alt="miniatura" class="miniatura" />
+    </div>
+
+    <footer>
+      <a href="https://pixabay.com" target="_blank">Więcej obrazów</a>
+      <p>Galerię wykonał: 00000000000</p>
+    </footer>
+
+    <script>
+      var currentImage = 1;
+
+      var prevguzik = document.querySelector("#prevguzik");
+      var nextguzik = document.querySelector("#nextguzik");
+
+      var obraz1 = document.querySelector("#obraz1");
+      var obraz2 = document.querySelector("#obraz2");
+      var obraz3 = document.querySelector("#obraz3");
+      var obraz4 = document.querySelector("#obraz4");
+      var obraz5 = document.querySelector("#obraz5");
+
+      function prevImage() {
+        if (currentImage == 1) {
+          currentImage = 5;
+        } else {
+          currentImage = currentImage - 1;
+        }
+        updateImage();
+      }
+
+      function nextImage() {
+        if (currentImage == 5) {
+          currentImage = 1;
+        } else {
+          currentImage = currentImage + 1;
+        }
+        updateImage();
+      }
+
+      function changeImage(imagenumber) {
+        currentImage = imagenumber;
+        updateImage();
+      }
+
+      function updateImage() {
+        var galleryImage = document.getElementById("galleryImage");
+        galleryImage.src = String(currentImage + ".jpg");
+      }
+
+      prevguzik.addEventListener("click", prevImage);
+      nextguzik.addEventListener("click", nextImage);
+
+      obraz1.addEventListener("click", () => {
+        changeImage(1);
+      });
+      obraz2.addEventListener("click", () => {
+        changeImage(2);
+      });
+      obraz3.addEventListener("click", () => {
+        changeImage(3);
+      });
+      obraz4.addEventListener("click", () => {
+        changeImage(4);
+      });
+      obraz5.addEventListener("click", () => {
+        changeImage(5);
+      });
+    </script>
+  </body>
+</html>
