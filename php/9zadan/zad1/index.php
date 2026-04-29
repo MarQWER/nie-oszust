@@ -1,12 +1,12 @@
 <?php
        
-$conn = new mysqli("localhost", "root", "", "movies");
+$conn = new mysqli("localhost", "root", "", "4fa_zadanka");
 
 $filmy = [];
 if (isset($_GET['szukaj'])) {
     $tytul = $conn->real_escape_string($_GET['tytul']);
     $sql = "SELECT * FROM filmy WHERE tytul LIKE '%$tytul%'";
-    $result = $conn->query($sql);
+    $result = mysqli_query($conn,$sql);
 
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Baz Danych SQL - Zadania PHP</title>
+    <style>
+        :root {
+            --bg: #f0f2f5;
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --success: #22c55e;
+            --dark: #1e293b;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 { color: var(--dark); font-size: 2.2rem; margin-bottom: 10px; }
+        p { color: var(--secondary); }
+
+        .sql-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--bg);
+            padding-bottom: 10px;
+        }
+
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-transform: capitalize;
+        }
+
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .copy-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .copy-btn:hover { background-color: #1d4ed8; }
+        .copy-btn.copied { background-color: var(--success); }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--dark);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: none;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Konfiguracja Baz Danych SQL</h1>
+        <p>Kliknij przycisk "Kopiuj", aby pobrać kod SQL dla poszczególnych tabel.</p>
+    </header>
+
+    <div id="cards-container">
+        </div>
+</div>
+
+<div id="toast" class="toast">Skopiowano do schowka!</div>
+
+<script>
+    const databases = [
+        { name: "Filmy (Zad 1)", sql: `CREATE TABLE filmy (\n id INT AUTO_INCREMENT PRIMARY KEY,\n tytul VARCHAR(200),\n rok INT,\n gatunek VARCHAR(100)\n);` },
+        { name: "Gry (Zad 2)", sql: `CREATE TABLE gry (\n id INT AUTO_INCREMENT PRIMARY KEY,\n tytul VARCHAR(200),\n ocena INT\n);` },
+        { name: "Książki (Zad 3)", sql: `CREATE TABLE ksiazki (\n id INT AUTO_INCREMENT PRIMARY KEY,\n tytul VARCHAR(200),\n autor VARCHAR(200),\n status VARCHAR(50)\n);` },
+        { name: "Ogłoszenia (Zad 4)", sql: `CREATE TABLE ogloszenia (\n id INT AUTO_INCREMENT PRIMARY KEY,\n tytul VARCHAR(200),\n tresc TEXT,\n data_dodania DATETIME\n);` },
+        { name: "Strony WWW (Zad 5)", sql: `CREATE TABLE strony (\n id INT AUTO_INCREMENT PRIMARY KEY,\n nazwa VARCHAR(200),\n link VARCHAR(255),\n kategoria VARCHAR(100)\n);` },
+        { name: "Głosowanie (Zad 6)", sql: `CREATE TABLE glosowanie (\n id INT AUTO_INCREMENT PRIMARY KEY,\n gra VARCHAR(200),\n glosy INT DEFAULT 0\n);` },
+        { name: "Anime (Zad 7)", sql: `CREATE TABLE anime (\n id INT AUTO_INCREMENT PRIMARY KEY,\n tytul VARCHAR(200),\n ocena INT\n);` },
+        { name: "Quiz (Zad 8)", sql: `CREATE TABLE pytania (\n id INT AUTO_INCREMENT PRIMARY KEY,\n pytanie VARCHAR(255),\n odp_a VARCHAR(200),\n odp_b VARCHAR(200),\n odp_c VARCHAR(200),\n poprawna CHAR(1)\n);` },
+        { name: "Minecraft (Zad 9)", sql: `CREATE TABLE serwery (\n id INT AUTO_INCREMENT PRIMARY KEY,\n nazwa VARCHAR(200),\n ip VARCHAR(100),\n tryb VARCHAR(100)\n);` }
+    ];
+
+    const container = document.getElementById('cards-container');
+    const toast = document.getElementById('toast');
+
+    databases.forEach((db, index) => {
+        const card = document.createElement('div');
+        card.className = 'sql-card';
+        card.innerHTML = `
+            <div class="card-header">
+                <h2>${db.name}</h2>
+                <button class="copy-btn" onclick="copySQL(this, ${index})">
+                    Kopiuj SQL
+                </button>
+            </div>
+            <pre><code>${db.sql}</code></pre>
+        `;
+        container.appendChild(card);
+    });
+
+    function copySQL(btn, index) {
+        const sqlText = databases[index].sql;
+        navigator.clipboard.writeText(sqlText).then(() => {
+            // UI Feedback
+            const originalText = btn.innerText;
+            btn.innerText = "Skopiowano!";
+            btn.classList.add('copied');
+            
+            toast.style.display = 'block';
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('copied');
+                toast.style.display = 'none';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>

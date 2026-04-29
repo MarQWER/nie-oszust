@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zbiór Zadań PHP & SQL</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --skill-bg: #e8f4fd;
+            --skill-text: #2980b9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 { margin: 0; font-size: 2.5em; }
+        p.subtitle { opacity: 0.8; margin-top: 10px; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .task-number {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        h2 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 1.4em;
+        }
+
+        h3 {
+            font-size: 1em;
+            margin: 15px 0 5px 0;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content { font-size: 0.95em; margin-bottom: 15px; }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .skill-badge {
+            background: var(--skill-bg);
+            color: var(--skill-text);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 0.9em;
+        }
+
+        li { margin-bottom: 5px; }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Zadania Praktyczne PHP</h1>
+    <p class="subtitle">Podstawy obsługi baz danych MySQL i formularzy</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Wyszukiwarka filmów</h2>
+            <span class="task-number">Zad 1</span>
+        </div>
+        <div class="skills">
+            <span class="skill-badge">SELECT</span>
+            <span class="skill-badge">LIKE</span>
+            <span class="skill-badge">POST</span>
+        </div>
+        <div class="content">
+            Zbuduj stronę z bazą filmów. Użytkownik może wyszukać film po tytule.
+        </div>
+        <h3>Zadania:</h3>
+        <ul>
+            <li>Dodaj pole wyszukiwania.</li>
+            <li>Wyświetl pasujące rekordy po wpisaniu tekstu.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Ranking gier</h2>
+            <span class="task-number">Zad 2</span>
+        </div>
+        <div class="skills">
+            <span class="skill-badge">INSERT</span>
+            <span class="skill-badge">DELETE</span>
+            <span class="skill-badge">ORDER BY</span>
+        </div>
+        <div class="content">
+            Stwórz stronę z rankingiem gier komputerowych (oceny 1–10).
+        </div>
+        <h3>Zadania:</h3>
+        <ul>
+            <li>Formularz dodawania gry.</li>
+            <li>Sortowanie od najwyższej oceny.</li>
+            <li>Możliwość usunięcia wpisu.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Lista książek</h2>
+            <span class="task-number">Zad 3</span>
+        </div>
+        <div class="skills">
+            <span class="skill-badge">UPDATE</span>
+            <span class="skill-badge">Statusy</span>
+            <span class="skill-badge">Przyciski Akcji</span>
+        </div>
+        <div class="content">
+            Zarządzaj statusem książek: "do przeczytania" lub "przeczytana".
+        </div>
+        <h3>Zadania:</h3>
+        <ul>
+            <li>Formularz dodawania książki.</li>
+            <li>Przycisk „Oznacz jako przeczytaną” przy każdym rekordzie.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Tablica ogłoszeń</h2>
+            <span class="task-number">Zad 4</span>
+        </div>
+        <div class="skills">
+            <span class="skill-badge">ORDER BY DESC</span>
+            <span class="skill-badge">DATE</span>
+        </div>
+        <div class="content">
+            Szkolna tablica z tytułem, treścią i datą dodania ogłoszenia.
+        </div>
+        <h3>Zadania:</h3>
+        <ul>
+            <li>Dodawanie nowych ogłoszeń.</li>
+            <li>Automatyczne sortowanie od najnowszych.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Baza stron WWW</h2>
+            <span class="task-number">Zad 5</span>
+        </div>
+        <div class="skills">
+            <span class="skill-badge">WHERE</span>
+            <span class="skill-badge">Filtrowanie</span>
+            <span class="skill-badge">Kategorie</span>
+        </div>
+        <div class="content">
+            Lista linków podzielona na kategorie (nauka, rozrywka, itp.).
+        </div>
+        <h3>Zadania:</h3>
+        <ul>
+            <li>Wyświetlanie nazwy, linku i kategorii.</li>
+            <li>Filtrowanie widoku według wybranej kategorii.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Licznik głosów</h2>
+            <span class="task-number">Zad 6</span>
+        </div>
+        <div class="skills">
+            <span class="skill-badge">UPDATE</span>
+            <span class="skill-badge">Incremental</span>
+            <span class="skill-badge">POST</span>
+        </div>
+        <div class="content">
+            System głosowania na ulubioną grę zwiększający licznik w bazie.
+        </div>
+        <h3>Zadania:</h3>
+        <ul>
+            <li>Wyświetlanie listy gier z przyciskiem "Głosuj".</li>
+            <li>Aktualizacja liczby głosów w czasie rzeczywistym.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Ranking Anime</h2>
+            <span class="task-number">Zad 7</span>
+        </div>
+        <div class="skills">
+            <span class="skill-badge">INSERT</span>
+            <span class="skill-badge">ORDER BY</span>
+            <span class="skill-badge">Formularze</span>
+        </div>
+        <div class="content">
+            Dodawaj i oceniaj ulubione serie anime w skali 1-10.
+        </div>
+        <h3>Zadania:</h3>
+        <ul>
+            <li>Dodawanie nowych pozycji.</li>
+            <li>Prezentacja rankingu od najlepszych wyników.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Quiz o grach</h2>
+            <span class="task-number">Zad 8</span>
+        </div>
+        <div class="skills">
+            <span class="skill-badge">SELECT</span>
+            <span class="skill-badge">Logic</span>
+            <span class="skill-badge">Validation</span>
+        </div>
+        <div class="content">
+            Prosty system sprawdzający wiedzę gracza.
+        </div>
+        <h3>Zadania:</h3>
+        <ul>
+            <li>Pobieranie pytania z bazy.</li>
+            <li>Porównanie odpowiedzi użytkownika z poprawną w bazie.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Baza serwerów MC</h2>
+            <span class="task-number">Zad 9</span>
+        </div>
+        <div class="skills">
+            <span class="skill-badge">WHERE</span>
+            <span class="skill-badge">Table View</span>
+            <span class="skill-badge">Filtering</span>
+        </div>
+        <div class="content">
+            Katalog serwerów Minecraft z podziałem na tryby (Survival, Skyblock).
+        </div>
+        <h3>Zadania:</h3>
+        <ul>
+            <li>Wyświetlanie IP oraz trybu gry.</li>
+            <li>Filtrowanie serwerów po trybie rozgrywki.</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 Kurs Programowania PHP & MySQL
+</footer>
+
+</body>
+</html>
